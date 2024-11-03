@@ -4,13 +4,13 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 
-var todoList= [{id:1,title:"Complete assignment1"},{id:2,title:"Complete assignment2"},{id:3,title:"Complete assignment3"}];
+var todoList= [{id:1,title:"Complete assignment 1"},{id:2,title:"Complete assignment 2"},{id:3,title:"Complete assignment 3"}];
 
 function App() {
 
   return (
-    <>
-      <h1>Todo List</h1>
+    <div>
+      <h1>To-do List</h1>
       <ul>
           {
             todoList.map(item=>{
@@ -18,7 +18,7 @@ function App() {
             })
           }
       </ul>
-    </>
+    </div>
   )
 }
 
