@@ -12,7 +12,7 @@ function AddTodoForm (props)
     
     <form onSubmit={handleAddTodo} >
         <label htmlFor="todoTitle" >Title</label>
-        <input name="title" id="title"></input>
+        <input name="title" id="title" placeholder="Enter todo title"></input>
         <button type="submit" > Add </button>
     </form>
 
