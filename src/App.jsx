@@ -1,6 +1,6 @@
 
 
-import { useState  } from 'react'
+import { Fragment, useState  } from 'react'
 import { useEffect } from 'react'
 import './App.css'
 import TodoList from './TodoList'
@@ -26,12 +26,11 @@ function App() {
    setTodoList([...todoList,newTodo]);
  }
   return (
-    <div>
+    <Fragment>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo={addTodo}/>
       <TodoList todoList={todoList}/>
-  
-    </div>
+    </Fragment>
   )
 }
 
