@@ -6,22 +6,38 @@ import './App.css'
 import TodoList from './TodoList'
 import AddTodoForm from './AddTodoForm'
 
-
-
-
-function useSemiPersintentState () {
-  const [todoList,setTodoList]=useState( 
-    JSON.parse(localStorage.getItem('savedTodoList') ) || []  
-  );
-  
-  useEffect (()=> {
-     localStorage.setItem('savedTodoList',JSON.stringify(todoList));
-  }, [todoList]);
-  return ( [todoList,setTodoList])
-}
+//function useSemiPersintentState () {
+//  return ( [todoList,setTodoList])
+//}
 
 function App() {
- const [todoList,setTodoList]=useSemiPersintentState();
+  const [todoList,setTodoList]=useState([]);
+  const [isLoading,setIsloading]=useState(true);
+
+  useEffect (()=> {
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve ({  data:{  todoList:JSON.parse(localStorage.getItem('savedTodoList') ) || []    }});
+           }, 2000); 
+          }
+      )
+      .then((result)=>{
+        setTodoList (result.data.todoList);
+        setIsloading (false);
+      });
+    
+  }, []);
+
+  useEffect(()=> {
+    if (!isLoading) {
+     localStorage.setItem('savedTodoList',JSON.stringify(todoList));
+    }
+  }, [todoList]);
+
+
+
+
+ //const [todoList,setTodoList]=useSemiPersintentState();
  
  
  function addTodo (newTodo){
@@ -37,7 +53,8 @@ function App() {
     <Fragment>
       <h1>Todo List</h1>
       <AddTodoForm onAddTodo={addTodo}/>
-      <TodoList todoList={todoList}  onRemoveTodo={removeTodo}/>
+      {isLoading?(<p>Loading...</p>): <TodoList todoList={todoList}  onRemoveTodo={removeTodo}/>}
+      
     </Fragment>
   )
 }

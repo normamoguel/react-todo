@@ -2,9 +2,10 @@ import TodoListItem from "./TodoListItem";
 
 
 function TodoList(props)
-{ 
-  const {todoList, onRemoveTodo}=props;
-  return(
+{  
+    const {todoList, onRemoveTodo}=props;
+  
+    return(
     <ul>
           { 
               todoList.map(todo => {
