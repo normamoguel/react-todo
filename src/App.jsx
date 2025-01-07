@@ -32,23 +32,19 @@ function App() {
       }
       const data = await response.json();
       
-      const todos = data.records.map((todo) => {
-        const newTodo =  {
+      const todos = data.records.map((todo) => ({
             id: todo.id,
-            title: todo.fields.Title
-        }
-        return newTodo;
-      
-        
-      });
+            title: todo.fields.Title,
+      }));
        console.log(todos);
        setTodoList (todos);
        setIsloading (false);
 
     } catch (error){
-      console.log(error.message);
-      
-           
+        console.log(error.message);
+    }
+      finally {
+        setIsloading(false); 
     }
   
   };

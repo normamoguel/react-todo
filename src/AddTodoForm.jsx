@@ -38,10 +38,11 @@ function AddTodoForm (props)
           
         
         } catch (error){
-          console.log(error.message);
-        
-               
+            console.log(error.message);
         }
+          finally {
+            setIsloading(false); 
+         }
       
       };
     
