@@ -1,5 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Parkinsans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -12,6 +16,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+p{
+  color: white;
+}
+
 
 a {
   font-weight: 500;
@@ -28,11 +37,21 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color:  #f3f4f7;
 }
+
+div{
+  width: 450px;
+  background-color: #352f5b;
+  border-radius: 13px 13px;
+}
+
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #ffffff;
+  background-color: #352f5b;;
 }
 
 button {
@@ -47,7 +66,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color:  #423a6f;
 }
 button:focus,
 button:focus-visible {

@@ -1,4 +1,4 @@
-
+import style from './InputWithLabel.module.css';
 import { useEffect } from 'react'
 import { useRef } from 'react';
 
@@ -10,7 +10,7 @@ function InputWithLabel (props)
         return(
             <>
                 <label htmlFor="title" >{props.children}</label>
-                <input 
+                <input className={style.InputWithLabel}
                     name="title" id="title"  ref={inputRef}
                     placeholder="Enter todo title"
                     value={props.todoTitle} 

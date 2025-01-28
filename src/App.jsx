@@ -5,7 +5,7 @@ import { useState } from 'react'
 import './App.css'
 import TodoList from './TodoList'
 import AddTodoForm from './AddTodoForm'
-
+import { GoChecklist } from "react-icons/go";
 
 
 function App() {
@@ -93,9 +93,13 @@ function App() {
           <Route path="/" 
                  element={ 
                         <>
-                          <h1>Todo List</h1>
+                         <div>
+                          <h1><GoChecklist />Todo List</h1>
+                          </div>
                           <AddTodoForm onAddTodo={addTodo}/>
                            {isLoading?(<p>Loading...</p>): <TodoList todoList={todoList}  onRemoveTodo={removeTodo}/>}
+                         
+                        
                         </>
                   }
           />
