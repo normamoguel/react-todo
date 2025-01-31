@@ -1,9 +1,14 @@
+import style from './TodoListItem.module.css';
+import { FaRegTrashCan } from "react-icons/fa6";
+import { FaRegCheckCircle } from "react-icons/fa";
+
+
 function TodoListItem(props)
 { 
   const{todo,onRemoveTodo}=props;
   return (
-    <li >{todo.title}
-    <button type="button" onClick={()=> onRemoveTodo(todo.id)} > Remove </button>
+    <li className={style.ListItem} ><FaRegCheckCircle />{todo.title}
+    <button type="button" onClick={()=> onRemoveTodo(todo.id)} > <FaRegTrashCan /> </button>
     </li>
   );
 
