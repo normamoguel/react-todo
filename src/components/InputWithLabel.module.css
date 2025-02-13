@@ -1,5 +1,8 @@
 .InputWithLabel {
-   width: 200px;
-   padding: 7px;    
+   width: 300px;
+   padding: 3px;    
    font-size: 12px;
+   height: 25px;
+   
+
 }
