@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import InputWithLabel from './InputWithLabel';
 import style from './AddTodoForm.module.css';
+import PropTypes from 'prop-types';
 
 
-function AddTodoForm (props)
+function AddTodoForm ({onAddTodo})
 {   const [todoTitle,setTodoTitle]=useState("");
-    const {onAddTodo}=props;
+    const [isLoading,setIsloading]=useState(true);
+    
 
     const fetchPostData = async()=> {
         let newTodoRecord={
@@ -65,7 +67,7 @@ function AddTodoForm (props)
         <InputWithLabel 
             todoTitle={todoTitle}  
             handleTitleChange={handleTitleChange}>
-            <label className={style.TitleForm}>Title</label> 
+            <label htmlFor="title" className={style.TitleForm}>Title</label> 
         </InputWithLabel >
         
         <button  className={style.BtnInputForm} type="submit" > Add </button>
@@ -74,4 +76,10 @@ function AddTodoForm (props)
 
     );
 }
+
+AddTodoForm.propTypes={
+  onAddTodo: PropTypes.func.isRequired
+}
+
+
 export default AddTodoForm;

@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Fragment, useEffect } from 'react'
 import { useState } from 'react'
 import './App.css'
-import TodoList from './TodoList'
-import AddTodoForm from './AddTodoForm'
+import TodoList from './components/TodoList'
+import AddTodoForm from './components/AddTodoForm'
 import { GoChecklist } from "react-icons/go";
 
 
@@ -36,7 +36,7 @@ function App() {
             id: todo.id,
             title: todo.fields.Title,
       }));
-       console.log(todos);
+       //console.log(todos);
        setTodoList (todos);
        setIsloading (false);
 
@@ -93,13 +93,13 @@ function App() {
           <Route path="/" 
                  element={ 
                         <>
-                         <div>
+                         <div >
                           <h1><GoChecklist />Todo List</h1>
-                          </div>
+                          
                           <AddTodoForm onAddTodo={addTodo}/>
                            {isLoading?(<p>Loading...</p>): <TodoList todoList={todoList}  onRemoveTodo={removeTodo}/>}
                          
-                        
+                         </div>
                         </>
                   }
           />
