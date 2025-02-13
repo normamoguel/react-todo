@@ -38,15 +38,13 @@ function AddTodoForm ({onAddTodo})
             throw new Error(message);
           }
           const data = await response.json();
-          
+          return data;
         
         } catch (error){
             console.log(error.message);
+            return null;
         }
-          finally {
-            setIsloading(false); 
-         }
-      
+         
       };
     
 
@@ -54,11 +52,15 @@ function AddTodoForm ({onAddTodo})
         let newTodoTitle= event.target.value;
         setTodoTitle(newTodoTitle);
     }
-    function handleAddTodo(event){
+    
+    const handleAddTodo= async (event)=>{
         event.preventDefault();
-        fetchPostData();
-        onAddTodo({title:todoTitle, id:Date.now()});
+        let result= await fetchPostData();
+        if (result===null) return;
+        let item=result.records[0];
         setTodoTitle("");
+        onAddTodo({id:item.id,Title:item.fields.Title,createdTime:item.createdTime});
+      
    }
    return(
     

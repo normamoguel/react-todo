@@ -19,7 +19,27 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.table{
+  border-collapse: collapse;
+  background-color: white;
+  border-top: 1px solid white;
+}
 
+.table tbody {
+  color: black;
+}
+.table thead {
+  background-color: rgba(53, 47, 91, 1);
+  color: white;
+}
+.table td {
+  text-align: left;
+}
+.table th, .table td {
+  border-bottom: 1px solid rgba(0,0, 0, 0.2);
+  padding: 7px;
+  
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,9 +57,11 @@
 
 .card {
   padding: 2em;
+  color: white;
 }
 
 .read-the-docs {
   color: #888;
 }
+
 

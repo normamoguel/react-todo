@@ -1,23 +1,31 @@
 import TodoListItem from "./TodoListItem";
-import style from './TodoList.module.css';
 import PropTypes from 'prop-types';
+
+
 
 function TodoList({todoList,onRemoveTodo})
 {  
     return(
-    <ul className={style.ListStyle}>
+
+    <>
+    
+    <tbody >
           { 
               todoList.map(todo => {
-              return (   <TodoListItem 
+              return ( <tr  key={todo.id} >
+                        <TodoListItem 
                            key={todo.id} 
                            todo={todo}  
                            onRemoveTodo={onRemoveTodo}
                           />
+                      </tr>
+                     
                       );                   
               
             })
           }
-      </ul>
+      </tbody>
+    </> 
   );
 }
 TodoList.propTypes={
