@@ -1,0 +1,37 @@
+.NavBar {
+     
+     align-items:baseline;
+     flex-direction: row;
+     display:flex;
+     justify-content: center;
+     padding: 10px;  
+     margin-top:0;  
+     border-top-left-radius: 0px;
+     border-top-right-radius: 0px;
+     --border: 1px solid red;
+     gap: 1px;
+  
+  
+}
+
+
+
+
+.BtnMenu
+{   background: #423a6f;
+    color: white;
+    padding: 7px;
+    margin-right:  1px;
+    border-radius: 3px 3px;
+    
+}
+
+.BtnMenu:hover {
+    background: white;
+    color:  #423a6f;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-radius: 3px 3px;
+    transition: 0.8s;
+ }
+

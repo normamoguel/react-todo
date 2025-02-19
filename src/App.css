@@ -40,6 +40,21 @@
   padding: 7px;
   
 }
+
+
+
+.title-th{
+  color:white;
+
+}
+
+.title-th:hover{
+  color:white;
+}
+
+
+
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
