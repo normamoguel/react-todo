@@ -1,16 +1,29 @@
 import { FaRegTrashCan } from "react-icons/fa6";
+import { VscPassFilled, VscPass } from "react-icons/vsc";
 import PropTypes from 'prop-types';
 
 
 function TodoListItem({todo,onRemoveTodo})
 { 
+  let dateCompleted= todo.completedAt;
   
-  return (
+  if (typeof(dateCompleted)!="undefined" && dateCompleted!=null){
+    dateCompleted=new Date(dateCompleted);
+    dateCompleted=dateCompleted.toLocaleDateString("en-US");
+  } else { 
+    dateCompleted="";
+  }
+    return (
     
      <>
-       <td >{todo.Title} </td>
+       <td><span>{todo?.status==="no"?<VscPass />:<VscPassFilled />} </span>{todo.Title} </td>
        <td> {todo.createdTime}</td>
-       <td> <button type="button" onClick={()=> onRemoveTodo(todo.id)} > <FaRegTrashCan /> </button></td>
+       <td> {dateCompleted}</td>
+       <td> <button type="button" 
+              onClick={(event)=>{ 
+                event.stopPropagation();
+                onRemoveTodo(todo.id)
+              }} > <FaRegTrashCan /> </button></td>
      </>
 
   );
@@ -18,6 +31,7 @@ function TodoListItem({todo,onRemoveTodo})
 }
 TodoListItem.propTypes={
   todo: PropTypes.object.isRequired,
-  onRemoveTodo: PropTypes.func.isRequired
+  onRemoveTodo: PropTypes.func.isRequired,
+  
 }
 export default TodoListItem;

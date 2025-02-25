@@ -1,8 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Fragment, useEffect } from 'react'
-import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { Fragment } from 'react'
 import './App.css'
 
 import About from './components/About';
