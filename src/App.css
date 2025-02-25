@@ -33,13 +33,32 @@
   color: white;
 }
 .table td {
-  text-align: left;
+  text-align: center;
 }
 .table th, .table td {
   border-bottom: 1px solid rgba(0,0, 0, 0.2);
   padding: 7px;
-  
+ 
 }
+.table td:first-child{
+  text-align: left;
+}
+
+
+
+
+.title-th{
+  color:white;
+
+}
+
+.title-th:hover{
+  color:white;
+}
+
+
+
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -55,6 +74,8 @@
   }
 }
 
+
+
 .card {
   padding: 2em;
   color: white;
@@ -62,6 +83,56 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.completed{
+  color: red;
+  text-decoration:line-through;
+}
+
+
+/* Mobile Styles (Small Screens) */
+@media (max-width: 768px) {
+  .card {
+    width: 450px;
+  }
+
+  .table th, .table td {
+    border-bottom: 1px solid rgba(0,0, 0, 0.2);
+    padding: 3px;
+   }
+   .table{
+    width: 100%;
+  }  
+}
+
+/* Tablet Styles (Medium Screens) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Styles for tablets */
+  .card {
+    width: 500px;
+  }
+  .table th, .table td {
+    border-bottom: 1px solid rgba(0,0, 0, 0.2);
+    padding: 7px;
+    align-items: center;
+   
+  }
+  .table{
+    width: 100%;
+  }
+}
+
+/* Desktop Styles (Large Screens) */
+@media (min-width: 1024px) {
+  /* Styles for large desktops */
+  .card {
+    width: 500px;
+  }
+
+  .table{
+    width: 100%;
+  }
 }
 
 

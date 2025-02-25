@@ -14,7 +14,8 @@ function AddTodoForm ({onAddTodo})
             "records":[
                 {
                     "fields":{
-                        "Title": `${todoTitle}`
+                        "Title": `${todoTitle}`,
+                        "status":'no'
                     }
                 }
             ]

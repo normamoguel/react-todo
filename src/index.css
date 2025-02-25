@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color:  #f3f4f7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -38,7 +38,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color:  #f3f4f7;
+  
   
 }
 
@@ -56,6 +56,27 @@ body {
   background-color: rgba(53,47,91,1);
   
 }
+
+.card-about{
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin:0px;
+  background-color: rgba(53,47,91,1);
+  font-style: italic;
+  font-size: medium;
+}
+
+.card-home{
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin:0px;
+  background-color: rgba(53,47,91,1);
+  font-style:oblique;
+  font-size: medium;
+}
+
 button:hover {
   background: #423a6f;
   color: #fff;
@@ -67,4 +88,5 @@ button {
   color: #fff;
   align-content: flex-end;
   box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.2);
+  margin-right: 5px;
 }
